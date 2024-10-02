@@ -47,13 +47,13 @@ export const signin = async (req, res, next) => {
       //! if all fields are correct then authenticate user- BY jwt 
       const token = jwt.sign(
         { id: validUser._id, isAdmin: validUser.isAdmin },
-        process.env.JWT_SECRET
+          process.env.JWT_SECRET
       );
   
       const { password: pass, ...rest } = validUser._doc; //This destructures the password field, renaming it as pass, while the ...rest syntax gathers all the remaining properties into a new object rest.
      // The password field is excluded from rest and can now be handled separately as pass.
-     
-      res
+
+         res
         .status(200)
         .cookie('access_token', token, {
           httpOnly: true,
