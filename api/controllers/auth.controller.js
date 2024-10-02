@@ -1,14 +1,15 @@
 import User from "../models/user.model.js";
 import bcryptjs from 'bcryptjs'
 import { errorHandler } from "../utils/error.js";
+import jwt from 'jsonwebtoken'
 
-export const signup =async(req,res,next)=>{
+export const signup = async(req,res,next)=>{
     const {username,email,password}=req.body;
 
     if(!username || !email || !password||username===''||email===''||password===''){
         next(errorHandler(400,"All fields are required")) 
     }
-    //! Hahing the passsword using bcryptjs
+    //! Hashing the passsword using bcryptjs
     const hashedPassword= bcryptjs.hashSync(password,10);
 
     const newUser= new User({
@@ -25,3 +26,41 @@ export const signup =async(req,res,next)=>{
     }
     
 }
+
+export const signin = async (req, res, next) => {
+    const { email, password } = req.body;
+  
+    if (!email || !password || email === '' || password === '') {
+      next(errorHandler(400, 'All fields are required'));
+    }
+  
+    try {
+      const validUser = await User.findOne({ email });
+      if (!validUser) {
+        return next(errorHandler(404, 'User not found'));
+      }
+      const validPassword = bcryptjs.compareSync(password, validUser.password);
+      if (!validPassword) {
+        return next(errorHandler(400, 'Invalid password'));
+      }
+
+      //! if all fields are correct then authenticate user- BY jwt 
+      const token = jwt.sign(
+        { id: validUser._id, isAdmin: validUser.isAdmin },
+        process.env.JWT_SECRET
+      );
+  
+      const { password: pass, ...rest } = validUser._doc; //This destructures the password field, renaming it as pass, while the ...rest syntax gathers all the remaining properties into a new object rest.
+     // The password field is excluded from rest and can now be handled separately as pass.
+     
+      res
+        .status(200)
+        .cookie('access_token', token, {
+          httpOnly: true,
+        })
+        .json(rest);
+
+    } catch (error) {
+      next(error);
+    }
+  };
