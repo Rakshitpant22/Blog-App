@@ -65,16 +65,18 @@ export const signin = async (req, res, next) => {
     }
   };
 
+  //! Google OAuth
   export const google=async(req,res,next)=>{
     const{name,email,googlePhotoUrl} =req.body;
     try {
         const user = await User.findOne({ email });
+    // generate access token if user found by email in DB
     if (user) {
       const token = jwt.sign(
         { id: user._id, isAdmin: user.isAdmin },
         process.env.JWT_SECRET
       );
-      const { password, ...rest } = user._doc;
+      const { password, ...rest } = user._doc; // save all things except password in user._doc
       res
         .status(200)
         .cookie('access_token', token, {
@@ -82,13 +84,15 @@ export const signin = async (req, res, next) => {
         })
         .json(rest);
        }
+       // if not found user or new user then generate new hashed password and then save user._doc
        else{
         const generatedPassword =
         Math.random().toString(36).slice(-8) +
-        Math.random().toString(36).slice(-8);
-       const hashedPassword = bcryptjs.hashSync(generatedPassword, 10);
+        Math.random().toString(36).slice(-8); //generated random password by this function
+        const hashedPassword = bcryptjs.hashSync(generatedPassword, 10); // hash the generated pass with bcrypt
 
-       const newUser = new User({
+        //create the new user
+       const newUser = new User({  
         username:
           name.toLowerCase().split(' ').join('') +
           Math.random().toString(9).slice(-4),
@@ -97,6 +101,7 @@ export const signin = async (req, res, next) => {
         profilePicture: googlePhotoUrl,
       });
       await newUser.save();
+      
       const token = jwt.sign(
         { id: newUser._id, isAdmin: newUser.isAdmin },
         process.env.JWT_SECRET
@@ -107,7 +112,7 @@ export const signin = async (req, res, next) => {
         .cookie('access_token', token, {
           httpOnly: true,
         })
-        .json(rest);
+        .json(rest);  //in res password is excluded
       }
     } catch (error) {
         next(error)
