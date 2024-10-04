@@ -54,7 +54,7 @@ export const updateUser = async (req, res, next) => {
     next(error);
   }
 };
-
+//! delete user
 export const deleteUser = async (req, res, next) => {
     if (req.user.id !== req.params.userId) {
       return next(errorHandler(403, 'You are not allowed to delete this user'));
@@ -66,3 +66,14 @@ export const deleteUser = async (req, res, next) => {
       next(error);
     }
   };
+
+//! sign out
+export const signout = async(req,res,next)=>{
+try {
+    res.clearCookie('acces_token')
+    .status(200)                                    //~ EROR I MADE TOOK 2 HRSSS => .res.status(200)
+    .json("User has been signed out");
+} catch (error) {
+    next(error);
+}
+}
