@@ -3,6 +3,7 @@ import bcryptjs from 'bcryptjs'
 import { errorHandler } from "../utils/error.js";
 import jwt from 'jsonwebtoken'
 
+//! sign up
 export const signup = async(req,res,next)=>{
     const {username,email,password}=req.body;
 
@@ -26,8 +27,7 @@ export const signup = async(req,res,next)=>{
     }
     
 }
-
-
+//! sign in
 export const signin = async (req, res, next) => {
     const { email, password } = req.body;
   
@@ -64,9 +64,8 @@ export const signin = async (req, res, next) => {
     } catch (error) {
       next(error);
     }
-  };
-
-  //! Google OAuth
+};
+//! Google OAuth
   export const google=async(req,res,next)=>{
     const{name,email,googlePhotoUrl} =req.body;
     try {
@@ -118,4 +117,4 @@ export const signin = async (req, res, next) => {
     } catch (error) {
         next(error)
     }
-  }
+}
