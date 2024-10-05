@@ -1,6 +1,7 @@
 import Post from '../models/post.model.js';
 import { errorHandler } from '../utils/error.js';
 
+//! creating post logic
 export const create = async (req, res, next) => {
 
   if (!req.user.isAdmin) { // if user is not admin we cant post
@@ -34,7 +35,7 @@ export const create = async (req, res, next) => {
   }
 };
 
-
+//! getting post logic
 export const getposts = async (req, res, next) => {
     try {
       const startIndex = parseInt(req.query.startIndex) || 0; // Defines the starting point of the query results, defaulting to 0 if not provided.
@@ -78,3 +79,16 @@ export const getposts = async (req, res, next) => {
     next(error);
   }
 };
+
+//! deleting post logic
+export const deletepost = async (req, res, next) => {
+    if (!req.user.isAdmin || req.user.id !== req.params.userId) {
+      return next(errorHandler(403, 'You are not allowed to delete this post'));
+    }
+    try {
+      await Post.findByIdAndDelete(req.params.postId);
+      res.status(200).json('The post has been deleted');
+    } catch (error) {
+      next(error);
+    }
+  };
