@@ -10,8 +10,11 @@ import path from 'path';
 
 dotenv.config();
 
-mongoose.connect(process.env.MONGO)
+mongoose.connect(process.env.MONGO,{useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 30000})
 .then(
+ 
     ()=>{
         console.log("Mongo DB  is connected")
     }
