@@ -14,14 +14,13 @@ export default function CallToAction() {
         </p>
         <Button gradientDuoTone='purpleToPink' className='rounded-full text-lg px-6 py-2'>
           <a href="https://leetcode.com/u/rakshit2003/" target='_blank' rel='noopener noreferrer'>
-            Explore Projects
+            Explore my profile
           </a>
         </Button>
       </div>
       <div className="p-6 flex-1">
         <img 
-          src="https://img.freepik.com/free-vector/smartphone-users-chatting-online_74855-4572.jpg?t=st=1728209279~exp=1728212879~hmac=dc78652be9dc3f4703b1ae3eba87a2fbd187b40e04006154b2e929ce69d18f2f&w=2000" 
-          alt="Blog CTA Graphic" 
+          src="https://res-console.cloudinary.com/dyeetjsrk/thumbnails/v1/image/upload/v1728213952/c3NzX2xydnJmMw==/preview" 
           className='w-full h-auto rounded-xl shadow-lg'
         />
       </div>
