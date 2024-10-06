@@ -1,6 +1,5 @@
 //! same code pasted from create post 
 
-
 import { Alert, Button, FileInput, Select, TextInput } from 'flowbite-react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
