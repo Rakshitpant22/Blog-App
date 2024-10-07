@@ -25,10 +25,13 @@ Check out the live version of the application deployed on Render:
 ## Screenshots
 
 ### Home Page
-![Home Page](https://res.cloudinary.com/dyeetjsrk/image/upload/f_auto,q_auto/v1/mern%20blog/hagwdrha8wu04b5ok4rr)
+![Home Page](https://res.cloudinary.com/dyeetjsrk/image/upload/v1728314282/mern%20blog/ccbotqyxypmzccmmf1ag.png )
+![Home Page](https://res.cloudinary.com/dyeetjsrk/image/upload/v1728314281/mern%20blog/huvaaxe4dp2yc0w1sx5n.png)
+![Home Page](https://res.cloudinary.com/dyeetjsrk/image/upload/v1728314281/mern%20blog/ddimxznfpqt6v1l5tyrt.png)
 
 ### Admin Dashboard
 ![Admin Dashboard](https://res.cloudinary.com/dyeetjsrk/image/upload/v1728311722/mern%20blog/qn7lgqo35k7ubxnfytis.png)
 
 ### Dark Mode
 ![Dark Mode](https://res.cloudinary.com/dyeetjsrk/image/upload/v1728311724/mern%20blog/hagwdrha8wu04b5ok4rr.png)
+![Dark Mode](https://res.cloudinary.com/dyeetjsrk/image/upload/v1728314467/mern%20blog/nvxhiunrcj4ri0dg8ixo.png)
