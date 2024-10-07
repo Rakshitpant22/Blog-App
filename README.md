@@ -28,7 +28,7 @@ Check out the live version of the application deployed on Render:
 ![Home Page](https://res.cloudinary.com/dyeetjsrk/image/upload/f_auto,q_auto/v1/mern%20blog/hagwdrha8wu04b5ok4rr)
 
 ### Admin Dashboard
-![Admin Dashboard](https://res-console.cloudinary.com/dyeetjsrk/media_explorer_thumbnails/d551441530c0ababb9c46617d9008392/detailed)
+![Admin Dashboard](https://res.cloudinary.com/dyeetjsrk/image/upload/v1728311722/mern%20blog/qn7lgqo35k7ubxnfytis.png)
 
 ### Dark Mode
-![Dark Mode](https://res-console.cloudinary.com/dyeetjsrk/media_explorer_thumbnails/06beb85be1a7ffe09058735d180e5c22/detailed)
+![Dark Mode](https://res.cloudinary.com/dyeetjsrk/image/upload/v1728311724/mern%20blog/hagwdrha8wu04b5ok4rr.png)
