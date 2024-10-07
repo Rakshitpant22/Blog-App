@@ -25,7 +25,7 @@ Check out the live version of the application deployed on Render:
 ## Screenshots
 
 ### Home Page
-![Home Page](https://res-console.cloudinary.com/dyeetjsrk/media_explorer_thumbnails/a3ab1fc748fbf7bcf52ace06d2a4d575/detailed)
+![Home Page](https://res.cloudinary.com/dyeetjsrk/image/upload/f_auto,q_auto/v1/mern%20blog/hagwdrha8wu04b5ok4rr)
 
 ### Admin Dashboard
 ![Admin Dashboard](https://res-console.cloudinary.com/dyeetjsrk/media_explorer_thumbnails/d551441530c0ababb9c46617d9008392/detailed)
