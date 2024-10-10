@@ -5,9 +5,10 @@ This is a fully featured blog application built using modern web technologies. T
 ## Live Demo
 ### This project runs on a free instance, leading to delays of up to 50 seconds after inactivity. Thank you for your patience!
 
-[Live Demo](https://mern-blog-cagn.onrender.com/)
-[Live Demo](https://blog-website-91vr.onrender.com/)
-)
+[Link 1](https://mern-blog-cagn.onrender.com/) 
+
+[Link 2](https://blog-website-91vr.onrender.com/)
+
 
 
 ## Technologies Used
