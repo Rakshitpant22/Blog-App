@@ -3,8 +3,12 @@
 This is a fully featured blog application built using modern web technologies. The application offers user authentication, dark mode, admin management, and post interactions with a sleek and optimized user interface.
 
 ## Live Demo
-Check out the live version of the application deployed on Render:  
+### This project runs on a free instance, leading to delays of up to 50 seconds after inactivity. Thank you for your patience!
+
 [Live Demo](https://mern-blog-cagn.onrender.com/)
+[Live Demo](https://blog-website-91vr.onrender.com/)
+)
+
 
 ## Technologies Used
 - **Frontend**: JavaScript, ReactJS, jQuery, Context API, Redux Store, TailwindCSS, Flowbite
